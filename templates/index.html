@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockly Web</title>
+    <script src="https://unpkg.com/blockly@9.3.3/blockly_compressed.js"></script>
+    <script src="https://unpkg.com/blockly@9.3.3/blocks_compressed.js"></script>
+    <script src="https://unpkg.com/blockly@9.3.3/javascript_compressed.js"></script>
+    <script src="https://unpkg.com/blockly@9.3.3/msg/es.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="https://static.vecteezy.com/system/resources/previews/019/906/478/non_2x/puzzle-graphic-clipart-design-free-png.png">
+
+</head>
+<body>
+    <h2>Entorno Blockly</h2>
+    <div id="blocklyDiv"></div>
+    <button onclick="ejecutarCodigo()">Ejecutar Código</button>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
