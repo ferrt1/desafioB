@@ -2,15 +2,16 @@ from flask import Flask, request, jsonify, render_template
 import requests
 import os
 from flask_cors import CORS
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 # Cargar variables de entorno desde .env
-load_dotenv()
+# load_dotenv()
 
 app = Flask(__name__)
 CORS(app)
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+print("OPENROUTER_API_KEY:", OPENROUTER_API_KEY)
 
 @app.route("/")
 def index():
