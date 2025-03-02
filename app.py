@@ -10,7 +10,8 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-OPENROUTER_API_KEY = "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"
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+
 
 @app.route("/")
 def index():
@@ -27,8 +28,8 @@ def consultar_ia():
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "https://desafio-b.vercel.app/",  
-        "X-Title": "MiAplicacionBlockly"  
+        "HTTP-Referer": "https://desafio-b.vercel.app/",  # Cambia esto si tienes un dominio real
+        "X-Title": "MiAplicacionBlockly"  # Opcional, solo para rankings en OpenRouter
     }
 
     payload = {
