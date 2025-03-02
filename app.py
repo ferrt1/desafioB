@@ -10,8 +10,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
-print("OPENROUTER_API_KEY:", OPENROUTER_API_KEY)
+OPENROUTER_API_KEY = "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"
 
 @app.route("/")
 def index():
