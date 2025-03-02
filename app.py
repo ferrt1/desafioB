@@ -27,7 +27,7 @@ def consultar_ia():
     headers = {
         "Authorization": f"Bearer {OPENROUTER_API_KEY}",
         "Content-Type": "application/json",
-        "HTTP-Referer": "http://localhost:5000",  # Cambia esto si tienes un dominio real
+        "HTTP-Referer": "https://desafio-b.vercel.app/",  # Cambia esto si tienes un dominio real
         "X-Title": "MiAplicacionBlockly"  # Opcional, solo para rankings en OpenRouter
     }
 
@@ -42,7 +42,8 @@ def consultar_ia():
         return jsonify(response.json())
     else:
         return jsonify({"error": "Error al consultar la IA", "detalle": response.text}), response.status_code
-
+    
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 5000)))
+
