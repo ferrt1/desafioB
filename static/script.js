@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     Blockly.JavaScript["consultarIA"] = function (block) {
         var pregunta = JSON.stringify(block.getFieldValue("PREGUNTA") || "");
         var code = `
-            fetch('https://desafio-b.vercel.app/consultar_ia', {
+            fetch('desafio-b-git-main-ferrts-projects.vercel.app/consultar_ia', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ pregunta: ${pregunta} })
